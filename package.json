@@ -1,0 +1,49 @@
+{
+  "name": "@pmwdigital/safe-reload",
+  "version": "0.1.0",
+  "description": "Reload a single-page app once when a deploy has removed a lazy chunk, and never while the user is busy",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwdigital/pmw-safe-reload.git"
+  },
+  "keywords": [
+    "vite",
+    "spa",
+    "dynamic-import",
+    "code-splitting",
+    "chunk",
+    "stale-chunk",
+    "service-worker",
+    "reload",
+    "deploy"
+  ]
+}
